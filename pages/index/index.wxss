@@ -1,0 +1,39 @@
+/**index.wxss**/
+
+.title{ color:rgba(175, 47, 47, 0.15); font-size:120rpx; margin-bottom: 40rpx;}
+
+.main{ width: 16rem; background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,.6)}
+
+.input{  line-height: 100rpx;height: 100rpx;width: 100%; padding-left: 20rpx;}
+
+.phcolor{ color:#ccc; font-style: italic; }
+
+.list{ line-height: 80rpx; padding:0 10rpx; border-bottom:1px solid #ccc; display: flex;flex-direction: row;justify-content: space-between;align-items: center; }
+
+.list icon{ font-size: 48rpx; display: none; }
+
+.list .show_icon{ display: block; }
+
+.list text{ width: 100%; padding-left: 20rpx; }
+
+.list .checkText{ text-decoration: line-through; color:#aaa; }
+
+.bottom{ box-shadow:  0 1px 1px rgba(0, 0, 0, 0.2),  0 8px 0 -3px #f6f6f6,  0 9px 1px -3px rgba(0, 0, 0, 0.2),  0 16px 0 -6px #f6f6f6,  0 17px 2px -6px rgba(0, 0, 0, 0.2) ;padding:0 10rpx 10rpx; font-size: 24rpx;  }
+
+.bottom_cont,.top_cont{ display: flex;justify-content: space-between;align-items: center;line-height: 60rpx;   }
+
+.bottom_btn{display: flex;align-items: center;  }
+
+.bottom_btn navigator{ margin-right:20rpx; }
+.bottom_btn text{ margin-right:20rpx; padding:4rpx 10rpx; border:1px solid transparent; }
+
+.bottom .on{ border:1px solid #ccc; }
+
+.top_cont{ box-shadow:0 1px 2px rgba(0,0,0,.6);padding-left: 10rpx;}
+
+.edit{ padding-left: 86rpx; line-height: 80rpx;height: 80rpx;border-bottom:1px solid #ccc; display: block;}
+
+.show{display: block;}
+.hide{display: none;}
+.fadeIn{ opacity: 1; }
+.fadeOut{ opacity: 0; }

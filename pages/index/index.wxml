@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class="container">
+  <text class="title">todos</text>
+  <view class="main">
+    <view class="top_cont">
+      <checkbox-group bindchange="checkAll" class="{{ allLists.length == 0 ? 'fadeOut':'fadeIn' }}">
+        <checkbox checked="{{ allChecked }}"></checkbox>
+      </checkbox-group>
+      <input placeholder-class="phcolor" placeholder='What needs to be done?' class="input" bindconfirm="add" focus="{{focus}}" value="{{ inputVal }}" />
+    </view>
+    <view class="" wx:for="{{ showLists }}" wx:key="index">
+      <view class="list" hidden='{{ item.edit }}'>
+        <checkbox-group bindchange="checked" data-id="{{item.id}}">
+          <checkbox value="{{ item.value }}" checked="{{ item.check }}"></checkbox>
+        </checkbox-group>
+        <text bindtap="edit" data-id="{{item.id}}" class="{{ item.check==true ?'checkText':'' }}">{{ item.value }}</text>
+        <icon type="cancel" bindtap="removeItem" data-index="{{index}}" color="red" class="{{ item.check==true ?'show_icon':'' }}"></icon>
+      </view>
+      <view hidden='{{ !item.edit }}'>
+        <input type='text' data-id='{{ item.id }}'  class="edit" value="{{ item.value }}" focus="{{ item.edit }}" bindblur="editBlur" />
+      </view>
+    </view>
+    <view class="bottom" hidden="{{ allLists.length == 0 }}">
+      <view class="bottom_cont">
+        <text hidden="{{ leftItem <= 1  }}">{{ leftItem }} items left</text>
+        <text hidden="{{ leftItem > 1  }}">{{ leftItem }} item left</text>
+        <text bindtap="removeSelect" hidden="{{ leftItem == showLists.length || showLists.length == 0 }}">Clear completed</text>
+      </view>
+      <view class="bottom_btn">
+        <text data-type="all" class="{{  dataType=='all'?'on':''  }}" bindtap="changeType">All</text>
+        <text data-type="active" class="{{  dataType=='active'?'on':''  }}" bindtap="changeType">Active</text>
+        <text data-type="completed" class="{{  dataType=='completed'?'on':''  }}" bindtap="changeType">Completed</text>
+      </view>
+    </view>
+  </view>
+</view>
