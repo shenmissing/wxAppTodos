@@ -1,2 +1,0 @@
-# wxAppTodos
-todos by wxApp
